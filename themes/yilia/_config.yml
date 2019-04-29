@@ -97,6 +97,16 @@ gitment_oauth:
   client_id: ''           #client ID
   client_secret: ''       #client secret
 
+#5、Gitalk
+gitalk:
+  enable: true
+  githubID: yshAnswer
+  repo: 'yshAnswer.github.io'
+  ClientID: 'dfe9d1a28fa11533f782'
+  ClientSecret: '948465eb68c8b46171ab79aba144a03e9e32c5a3'
+  adminUser: Answer
+  distractionFreeMode: true
+
 # 样式定制 - 一般不需要修改，除非有很强的定制欲望…
 style:
   # 头像上面的背景颜色
