@@ -1,16 +1,17 @@
 <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
 <script type="text/javascript">
-
   if (<%= theme.gitalk.enable %>) {
     var gitalk = new Gitalk({
       clientID: '<%=theme.gitalk.ClientID%>',
       clientSecret: '<%=theme.gitalk.ClientSecret%>',
       repo: '<%=theme.gitalk.repo%>',
-      owner: '<%=theme.gitalk.githubID%>',
-      admin: ['<%=theme.gitalk.adminUser%>'],
+      owner: '<%=theme.gitalk.owner%>',
+      admin: ['<%=theme.gitalk.admin%>'],
       id: '<%= page.date %>',
       distractionFreeMode: '<%=theme.gitalk.distractionFreeMode%>'
     })
