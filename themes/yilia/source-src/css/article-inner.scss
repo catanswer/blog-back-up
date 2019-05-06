@@ -1,6 +1,6 @@
 .article-inner {
 	p {
-	    margin: 0 0 1.75em;
+	    // margin: 0 0 1.75em;
 	}
 }
 
@@ -75,8 +75,10 @@
 }
 .article-entry{
   line-height: 1.8em;
-  padding-right: 7.6923%;
-  padding-left: 7.6923%;
+  padding-right: $articlePadding;
+  padding-left: $articlePadding;
+  // padding-right: 7.6923%;
+  // padding-left: 7.6923%;
   p{
     margin-top: 10px;
   }

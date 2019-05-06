@@ -90,9 +90,10 @@
 }
 
 .article-header{
-  border-left: 5px solid #4d4d4d;
-  padding: 30px 0px 15px 25px;
-  padding-left: 7.6923%;
+  border-left: 4px solid #4d4d4d;
+  padding: 20px 0px;
+  padding-left: $articlePadding;
+  // padding-left: 7.6923%;
 }
 
 .article-meta{
@@ -136,7 +137,7 @@
       visibility: hidden;
     }
     &.article-more-a {
-      display: inline-block !important;
+      display: block !important;
     }
   }
 }
@@ -146,7 +147,7 @@
 }
 .article-info-index.article-info{
 	padding-top: 20px;
-	margin: 30px $articlePadding 0 $articlePadding;
+	margin: 20px $articlePadding 0 $articlePadding;
   min-height: 72px;
   border-top: 1px solid #ddd;
 }
