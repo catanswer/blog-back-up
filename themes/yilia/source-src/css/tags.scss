@@ -105,7 +105,8 @@
 .archive-article-date {
     float: right;
     color: #999;
-    margin-right: 7.6923%;
+    margin-right: $articlePadding;
+    // margin-right: 7.6923%;
     margin-top: 5px;
     .icon {
         margin: 5px 5px 5px 0;

@@ -88,11 +88,14 @@
   -o-transition: color 0.3s;
   transition: color 0.3s;
 }
+.article-title {
+  margin-bottom: 0;
+}
 
 .article-header{
-  border-left: 4px solid #4d4d4d;
-  padding: 20px 0px;
-  padding-left: $articlePadding;
+  border-left: 5px solid #696969;
+  padding: 15px 0px 15px 25px;
+  // padding-left: $articlePadding;
   // padding-left: 7.6923%;
 }
 
@@ -117,14 +120,14 @@
   display: none;
 }
 .article-more-link{
-  margin-top: 0;
+  margin-top: 3px;
   text-align: left;
   float: right;
   a {
     background: #4d4d4d;
     color: #fff;
     font-size: 12px;
-    padding: 5px 8px 5px;
+    padding: 2px 8px 4px;
     line-height: 16px;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
