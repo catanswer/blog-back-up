@@ -112,12 +112,14 @@
     }
   }
 }
-
+.article-more-a {
+  display: none;
+}
 .article-more-link{
   margin-top: 0;
   text-align: left;
   float: right;
-  a{
+  a {
     background: #4d4d4d;
     color: #fff;
     font-size: 12px;
@@ -132,6 +134,9 @@
     }
     &.hidden{
       visibility: hidden;
+    }
+    &.article-more-a {
+      display: inline-block !important;
     }
   }
 }
