@@ -1,7 +1,7 @@
 .archives-wrap{
   position: relative;
   margin: 0 30px;
-  padding-right: 60px;
+  padding-right: 40px;
   border-bottom: 1px solid #eee;
   background: #fff;
   &:first-child{
@@ -14,14 +14,14 @@
     line-height: 35px;
     width: 200px;
     position: absolute;
-    padding-top: 20px;
+    padding-top: 18px;
     font-size: 1.8em;
     z-index: 1;
   }
   .archive-year-wrap a{
     color: #666;
     font-weight: bold;
-    padding-left: 48px;
+    padding-left: 40px;
   }
 }
 
@@ -102,13 +102,11 @@
       font-size: 14px;
     }
     .archive-article-date{
-     cursor: default;
-     font-size: 12px;
-     margin-bottom: 5px;
-     margin-top: -10px;
-     margin-right: 0;
-     time{
-     }
+      cursor: default;
+      font-size: 12px;
+      margin-bottom: 5px;
+      margin-top: -10px;
+      margin-right: 0;
     }
     .article-category{
       &:before{
