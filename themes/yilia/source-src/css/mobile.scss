@@ -30,17 +30,17 @@ html, body, #container {
 }
 .tools-col {
     left: -300px;
-    width: 300px;
+    width: 330px;
     .tools-wrap {
         padding-top: 48px;
     }
     .tools-wrap, .tools-section {
-        width: 300px;
+        width: 330px;
         .search-wrap {
             width: 280px;
         }
         .search-tag.tagcloud {
-            margin-right: -30px;
+            // margin-right: -30px;
         }
         .search-ul .search-li {
             padding: 5px 20px;
@@ -270,8 +270,8 @@ html, body, #container {
     .article-meta{
         .archive-article-date{
             font-size: 12px;
-            margin-right: 10px;
-            margin-top: -5px;
+            // margin-right: 10px;
+            // margin-top: -5px;
         }
         .article-tag-list-link{
             font-size: 12px;
@@ -331,7 +331,8 @@ html, body, #container {
         width: 100%;
         z-index: 9999;
         ul {
-            margin-right: 28px;
+            margin: 0 auto;
+            // margin-right: 28px;
         }
         ul, li {
             border-color: #fff;

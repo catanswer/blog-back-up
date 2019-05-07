@@ -1,7 +1,7 @@
 .archives-wrap{
   position: relative;
   margin: 0 30px;
-  padding-right: 40px;
+  padding-right: 30px;
   border-bottom: 1px solid #eee;
   background: #fff;
   &:first-child{
@@ -21,7 +21,7 @@
   .archive-year-wrap a{
     color: #666;
     font-weight: bold;
-    padding-left: 40px;
+    padding-left: 30px;
   }
 }
 
@@ -80,13 +80,13 @@
     min-height: 36px;
   }
   .article-meta{
-    position: relative;
+    width: auto;
     float: right;
-    margin-top: -10px;
     color: #555;
     background: none;
     text-align: right;
-    width: auto;
+    margin-top: 10px;
+    margin-right: 8px;
     .article-date{
       time{
         color: #aaa;
@@ -104,8 +104,7 @@
     .archive-article-date{
       cursor: default;
       font-size: 12px;
-      margin-bottom: 5px;
-      margin-top: -10px;
+      margin-top: 0;
       margin-right: 0;
     }
     .article-category{

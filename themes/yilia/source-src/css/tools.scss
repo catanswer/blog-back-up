@@ -1,5 +1,5 @@
 .tools-col {
-    width: 300px;
+    // width: 300px;
     height: 100%;
     position: fixed;
     left: 0;
@@ -22,9 +22,9 @@
         display: none;
     }
     .tools-wrap, .tools-section{
+        width: 360px;
         height: 100%;
         color: #e5e5e5;
-        width: 360px;
         overflow: hidden;
         overflow-y: auto;
         ::-webkit-scrollbar {
@@ -33,16 +33,18 @@
     }
     .tools-section {
         .search-wrap {
-            width: 310px;
-            margin: 20px 20px 10px 20px;
+            width: 320px;
+            margin: 20px auto 10px auto;
             position: relative;
             .search-ipt {
-                width: 310px;
+                width: 100%;
+                padding-right: 20px;
+                font-size: 14px;
                 color: #fff;
                 background: none;
                 border: none;
-                border-bottom: 2px solid #fff;
-                font-family: Roboto, "Roboto", serif;
+                border-bottom: 1px solid #fff;
+                // font-family: Roboto, "Roboto", serif;
             }
             .icon {
                 position: absolute;
@@ -52,7 +54,7 @@
                 cursor: pointer;
                 @extend %trans;
                 &:hover {
-                    transform: scale(1.2);
+                    transform: scale(1.1);
                 }
             }
             ::-webkit-input-placeholder {
@@ -116,9 +118,9 @@
                 width: 14px;
                 height: 14px;
                 position: absolute;
-                top: 15px;
+                top: 9px;
                 left: 2px;
-                -webkit-transform: translateY(-50%);
+                // -webkit-transform: translateY(-50%);
                 border-radius: 100%;
                 background-color: #91c0f1;
                 box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
@@ -130,7 +132,7 @@
                 @extend %trans;
                 display: none;
                 margin: 15px 10px 0;
-                padding: 10px;
+                padding: 8px 10px;
                 background: rgba(255,255,255,0.2);
                 &.show {
                     display: block;
@@ -172,15 +174,17 @@
             .search-time, .search-tag {
                 font-size: 12px;
                 color: #fffdd8;
-                margin-right: 10px;
+                margin-right: 12px;
                 .icon {
-                    display: inline-block;
-                    vertical-align: middle;
                     margin-right: 0px;
+                    display: inline-block;
+                }
+                .icon-price-tags {
+                    vertical-align: -2px;
                 }
                 span {
                     display: inline-block;
-                    vertical-align: middle;
+                    vertical-align: 1px;
                     cursor: pointer;
                     &:hover {
                         color: #fff;

@@ -57,10 +57,6 @@
 .article {
   position: relative;
   margin: 30px;
-  border: 1px solid #ddd;
-  // border: 1px solid #ddd;
-  // border-top: 1px solid #fff;
-  // border-bottom: 1px solid #fff;
   background: #fff;
   transition: all 0.2s ease-in;
 /*   &.show{
@@ -102,11 +98,7 @@
 
 .article-meta{
   width: 150px;
-  font-size: 14;
   text-align: right;
-  position: absolute;
-  right: 0;
-  top: 23px;
   text-align: center;
   z-index: 1;
   time{
