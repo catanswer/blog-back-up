@@ -8,15 +8,12 @@ categories:
 
 <!-- # Webpack知识整理 -->
 
-<a id="markdown-webpack的定义" name="webpack的定义"></a>
 ## Webpack的定义
   webpack是一个基于nodejs开发的模块打包工具
   一开始， webpack只是一个js打包工具，在之后的发展中，它还可以对css、图片等文件进行打包
 <!-- more -->
 
-<a id="markdown-webpack安装及基本使用" name="webpack安装及基本使用"></a>
 ## Webpack安装及基本使用
-<a id="markdown-安装nodejs" name="安装nodejs"></a>
 #### 安装Nodejs
   在[Nodejs官网](https://nodejs.org/en/)下载安装包（建议下载左侧的稳定版本）进行安装。
   
@@ -26,7 +23,6 @@ categories:
     npm -v
   ```
 
-<a id="markdown-创建使用webpack的项目" name="创建使用webpack的项目"></a>
 #### 创建使用Webpack的项目
   * 初始化项目
     -y：以默认的设置直接初始化，无需手动敲回车
@@ -49,7 +45,6 @@ categories:
       npx webpack -v
     ```
 
-<a id="markdown-webpack配置文件" name="webpack配置文件"></a>
 #### webpack配置文件
   * 在项目根目录下创建`webpack.config.js`（默认名称）文件, 如：
     ```javascript
@@ -78,9 +73,7 @@ categories:
     ```
   这样只需要在命令行输入`npm run build`就会自动寻找到在根目录下的`webpack.config.js`配置文件并进行打包
 
-<a id="markdown-config配置" name="config配置"></a>
 ## Config配置
-<a id="markdown-entry、output" name="entry、output"></a>
 #### entry、output
   ```javascript
     ...
@@ -104,7 +97,6 @@ categories:
     }
     ...
   ```
-<a id="markdown-devtoolsourcemap" name="devtoolsourcemap"></a>
 #### Devtool: source-map
   [source-map](https://webpack.js.org/configuration/devtool)它是一个映射关系，它知道`dist`目录下打包后的文件实际对应`src`目录下文件的具体位置。(源代码和目标生成代码之间的映射关系)
   ```javascript
@@ -121,7 +113,6 @@ categories:
     - 开发环境：`cheap-module-eval-source-map`
     - 生产环境：`cheap-module-source-map`
 
-<a id="markdown-devserver" name="devserver"></a>
 #### DevServer
   [DevServer](https://webpack.js.org/configuration/dev-server)开发环境下，自动打包文件，并刷新浏览器，需单独安装使用`npm i webpack-dev-server -D`
   - `contentBase`：告诉服务器从哪里提供内容。只有在你想要提供静态文件时才需要
@@ -145,7 +136,6 @@ categories:
   - `hotOnly`：在项目打包失败时，不刷新页面
   - `proxy`: 代理请求，解决开发时跨域问题
   
-<a id="markdown-treeshaking" name="treeshaking"></a>
 #### Tree-Shaking
   自动剔除多余代码。只支持对`import`引入的代码进行‘瘦身’。
   - 在`development`环境下，默认不开启，如需使用，如下：
@@ -166,7 +156,6 @@ categories:
       ```
     > 在**development**环境下打包后的文件中，还是会有未使用的代码，这是为了方便调试，以免代码行号的错误。如需看到真正的效果，只需让mode更改为**production**，此时无需再配置optimization的usedExports属性
 
-<a id="markdown-loader" name="loader"></a>
 ## Loader
   webpack可以使用loader来预处理文件，这允许你打包除了js之外的任何静态资源，[官方推荐loader](https://webpack.js.org/loaders)。
   > loader执行的特点： **从上到下，从左到右的顺序执行**
@@ -184,7 +173,6 @@ categories:
     },
     output: { ... }
   ```
-<a id="markdown-静态资源打包图片" name="静态资源打包图片"></a>
 #### 静态资源打包-图片
 - [file-loader](https://webpack.js.org/loaders/file-loader)：可以用来处理图片、字体资源
   ```javascript
@@ -221,7 +209,6 @@ categories:
     ...
   ```
 
-<a id="markdown-静态资源打包css" name="静态资源打包css"></a>
 #### 静态资源打包-CSS
   - [style-loader](https://webpack.js.org/loaders/style-loader)：将css添加到页面的`<style>`标签中，一般会配合`css-loader`使用。
   常用的配置如下：
@@ -265,7 +252,6 @@ categories:
       }
     ```
   
-<a id="markdown-使用babel处理es6语法" name="使用babel处理es6语法"></a>
 #### 使用Babel处理ES6语法
   - `babel`的具体使用方法，可以[参考官网](https://babeljs.io/setup#installation)
   - [babel-loader](https://webpack.js.org/loaders/babel-loader)：
@@ -338,15 +324,12 @@ categories:
     ```
       >相关的`babel`配置，除了能直接写在`babel-loader`的`options`中外，还能抽离配置属性到`.babelrc`文件中，让配置更加的清晰明了
 
-<a id="markdown-其他一些功能的loader" name="其他一些功能的loader"></a>
 #### 其他一些功能的Loader
  - [imports-loader](https://www.webpackjs.com/loaders/imports-loader/)
   可以通过这个loader向模块中插入一些变量等功能，具体点击链接查看
 
 
-<a id="markdown-plugins" name="plugins"></a>
 ## Plugins
-<a id="markdown-htmlwebpackplugin" name="htmlwebpackplugin"></a>
 #### html-webpack-plugin
   [html-webpack-plugin](https://webpack.js.org/plugins/html-webpack-plugin)：在打包结束后，自动生成一个html文件，并把打包生成的js自动引入到这个html文件中。
   ```javascript
@@ -357,11 +340,9 @@ categories:
       })
     ]
   ```
-<a id="markdown-cleanwebpackplugin" name="cleanwebpackplugin"></a>
 #### clean-webpack-plugin
   [clean-webpack-plugin](https://github.com/johnagan/clean-webpack-plugin)：在打包之前，清理之前打包的文件目录
 
-<a id="markdown-splitchunksplugin" name="splitchunksplugin"></a>
 #### split-chunks-plugin
   [split-chunks-plugin](https://webpack.js.org/plugins/split-chunks-plugin/)配置项的介绍：
   ```javascript
@@ -408,7 +389,6 @@ categories:
     }
   ```
 
-<a id="markdown-minicssextractplugin" name="minicssextractplugin"></a>
 #### mini-css-extract-plugin
   [mini-css-extract-plugin](https://webpack.js.org/plugins/mini-css-extract-plugin)分割css，把css文件剥离出作为一个单独的文件引入最后打包后的html文件。建议在`生成环境`中配置该属性。
   - **安装**：
@@ -450,7 +430,6 @@ categories:
   
   由于分割出来的文件中的css未被压缩处理过，所以就需要用到下面`optimize-css-assets-webpack-plugin`插件
 
-<a id="markdown-optimizecssassetswebpackplugin" name="optimizecssassetswebpackplugin"></a>
 #### optimize-css-assets-webpack-plugin
   [optimize-css-assets-webpack-plugin](https://github.com/NMFR/optimize-css-assets-webpack-plugin)：压缩css文件内容
   - **安装**：
@@ -472,7 +451,6 @@ categories:
     ```
     > 由于重写了optimization的配置项，所以原来默认的压缩js代码的配置也失效了，需重新安装配置[uglifyjs-webpack-plugin](https://webpack.js.org/plugins/uglifyjs-webpack-plugin/)
 
-<a id="markdown-webpackprovideplugin" name="webpackprovideplugin"></a>
 #### webpack ProvidePlugin
   [webpack.ProvidePlugin](https://www.webpackjs.com/plugins/provide-plugin/)：自动加载模块，而不必到处 import 或 require
   - 使用
@@ -490,7 +468,6 @@ categories:
     ```
 
 
-<a id="markdown-addassethtmlwebpackplugin" name="addassethtmlwebpackplugin"></a>
 #### add-asset-html-webpack-plugin
   [add-asset-html-webpack-plugin](https://github.com/SimenB/add-asset-html-webpack-plugin)：在打包生成的html文件中添加静态资源
   ```js
@@ -506,9 +483,7 @@ categories:
   
 
 
-<a id="markdown-基本使用" name="基本使用"></a>
 ## 基本使用
-<a id="markdown-development和production模式区分打包" name="development和production模式区分打包"></a>
 #### Development和Production模式区分打包
   ```dash
     // 安装webpack合并模块
@@ -516,7 +491,6 @@ categories:
   ```
   生产环境下的配置：`webpack.prod.js`和开发环境下的配置：`webpack.dev.js`，将它俩共用的代码部分提取到`webpack.common.js`，然后在各自的代码中与之合并
 
-<a id="markdown-codesplittingjs代码分割" name="codesplittingjs代码分割"></a>
 #### Code Splitting-JS代码分割
   - **存在的问题**：在我们在项目中使用类似`lodash`的第三方库进行打包时，会把第三方库的代码也进行打包，影响项目的性能，这是不合理的。
   - **解决方案**
@@ -569,11 +543,9 @@ categories:
   - **Chunk是什么**
     每一个被打包的js文件都是一个chunk。
 
-<a id="markdown-codesplittingcss代码分割" name="codesplittingcss代码分割"></a>
 #### Code Splitting-CSS代码分割
   详细介绍请看`Plugins`章节的`mini-css-extract-plugin`
 
-<a id="markdown-打包分析" name="打包分析"></a>
 #### 打包分析
   - [官方工具](https://github.com/webpack/analyse)（需科学上网）
     - 在`package.json`文件中的`script`属性中配置一个命令，该命令的内容是`webpack --profile --json > stats.json`。
@@ -583,7 +555,6 @@ categories:
   - **[其他工具](https://webpack.js.org/guides/code-splitting#bundle-analysis)**
     推荐[webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)这个工具。
 
-<a id="markdown-preloading和prefetching" name="preloading和prefetching"></a>
 #### Preloading和Prefetching
   [Preloading和Prefetching](https://webpack.js.org/guides/code-splitting#prefetchingpreloading-modules)
   ```javascript
@@ -593,7 +564,6 @@ categories:
   - webpackPrefetch：等待主的文件加载完成后，才去加载
   - webpackPreload：会和主的文件一起加载（不推荐）
 
-<a id="markdown-webpack与浏览器缓存" name="webpack与浏览器缓存"></a>
 #### Webpack与浏览器缓存
   - **问题**：在项目打包后，上线到服务器，用户第一次访问网站，浏览器会缓存网站上的资源；如果这个时候网站内容（例如某个js文件）发生更改，重新打包上传服务器，此时用户再次访问，由于浏览器本地已有缓存，则不会看到修改后的内容。
   - **解决**：项目打包时，在`output`属性的`filename`和`chunkfilename`属性中添加`[contenthash]`的占位符，这样打包后的文件就会带上哈希值，文件内容是否修改决定了该哈希值是否变化。
@@ -606,7 +576,6 @@ categories:
       ...
     ```
 
-<a id="markdown-环境变量的配置" name="环境变量的配置"></a>
 #### 环境变量的配置
   一般区分打包环境有两种方式
   - 以文件区分
@@ -614,9 +583,7 @@ categories:
   - 以环境变量区分
     步骤基本和上面方式一样，不同的是在配置运行命令时，会加上环境参数，比如`build: webpack --env.production --config webpack.common.js`。开发和生产环境的配置最终都在`webpack.common.js`中根据环境变量来决定最终的打包配置。
 
-<a id="markdown-实际应用" name="实际应用"></a>
 ## 实际应用
-<a id="markdown-library库的打包" name="library库的打包"></a>
 #### Library(库)的打包
   详细请参考[这里](https://www.webpackjs.com/guides/author-libraries/)
   ```js
@@ -661,7 +628,6 @@ categories:
   ```
   申请[npm官网](https://www.npmjs.com/)账号，然后在项目命令行中运行`npm adduser`登录账号,然后运行`npm publish`可以发布到npm官方库上
   
-<a id="markdown-pwa的打包配置" name="pwa的打包配置"></a>
 #### PWA的打包配置
   > [PWA](https://www.webpackjs.com/guides/progressive-web-application/)（Progressive Web App）是一种理念，使用多种技术来增强web app的功能，可以让网站的体验变得更好，能够模拟一些原生功能，比如通知推送。在移动端利用标准化框架，让网页应用呈现和原生应用相似的体验
   - **安装**
@@ -698,7 +664,6 @@ categories:
     ```
 
 
-<a id="markdown-typescript的打包配置" name="typescript的打包配置"></a>
 #### TypeScript的打包配置
   `TypeScript`是JavaScript的一个超集。
   - **安装**：
@@ -745,7 +710,6 @@ categories:
     ```
     
 
-<a id="markdown-devserver：实现请求转发、单页面路由" name="devserver：实现请求转发、单页面路由"></a>
 #### DevServer：实现请求转发、单页面路由
   ```js
     // webpack.config.js
@@ -794,7 +758,6 @@ categories:
     ...
   ```
 
-<a id="markdown-在webpack中eslint的配置" name="在webpack中eslint的配置"></a>
 #### 在Webpack中Eslint的配置
   详细请参考[这里](https://webpack.js.org/loaders/eslint-loader/)
   - **安装**
@@ -828,7 +791,6 @@ categories:
       ...
     ```
 
-<a id="markdown-多页面打包配置" name="多页面打包配置"></a>
 #### 多页面打包配置
   - **使用**
     ```js
@@ -890,7 +852,6 @@ categories:
       module.exports = config
     ```
 
-<a id="markdown-性能优化提升打包速度" name="性能优化提升打包速度"></a>
 #### 性能优化-提升打包速度
   - 跟上技术的迭代（Node, Npm, Yarn）
   - 在尽可能少的模块上应用Loader
@@ -992,9 +953,7 @@ categories:
   - 开发环境剔除无用插件：开发环境下无需对代码进行压缩
 
 
-<a id="markdown-自定义实现" name="自定义实现"></a>
 ## 自定义实现
-<a id="markdown-编写loader" name="编写loader"></a>
 #### 编写Loader
   一些API，可以点击[这里](https://www.webpackjs.com/api/loaders/#this-query)查看
   ```js
@@ -1051,7 +1010,6 @@ categories:
     }
   ```
 
-<a id="markdown-编写plugin" name="编写plugin"></a>
 #### 编写Plugin
   **区别**
   - Loader：是用来处理模块的
@@ -1087,53 +1045,4 @@ categories:
       "debug": "node --inspect --inspect-brk node_modules/webpack/bin/webpack.js"
     }
   ```
-  
-<!-- TOC -->
-<div class="tree-box">
-
-- [Webpack的定义](#Webpack%E7%9A%84%E5%AE%9A%E4%B9%89)
-- [Webpack安装及基本使用](#Webpack%E5%AE%89%E8%A3%85%E5%8F%8A%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
-    - [安装Nodejs](#%E5%AE%89%E8%A3%85Nodejs)
-    - [创建使用Webpack的项目](#%E5%88%9B%E5%BB%BA%E4%BD%BF%E7%94%A8Webpack%E7%9A%84%E9%A1%B9%E7%9B%AE)
-    - [webpack配置文件](#webpack%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6)
-- [Config配置](#Config%E9%85%8D%E7%BD%AE)
-    - [entry、output](#entryoutput)
-    - [Devtool: source-map](#Devtool-source-map)
-    - [DevServer](#DevServer)
-    - [Tree-Shaking](#Tree-Shaking)
-- [Loader](#Loader)
-    - [静态资源打包-图片](#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85-%E5%9B%BE%E7%89%87)
-    - [静态资源打包-CSS](#%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%89%93%E5%8C%85-CSS)
-    - [使用Babel处理ES6语法](#%E4%BD%BF%E7%94%A8Babel%E5%A4%84%E7%90%86ES6%E8%AF%AD%E6%B3%95)
-    - [其他一些功能的Loader](#%E5%85%B6%E4%BB%96%E4%B8%80%E4%BA%9B%E5%8A%9F%E8%83%BD%E7%9A%84Loader)
-- [Plugins](#Plugins)
-    - [html-webpack-plugin](#html-webpack-plugin)
-    - [clean-webpack-plugin](#clean-webpack-plugin)
-    - [split-chunks-plugin](#split-chunks-plugin)
-    - [mini-css-extract-plugin](#mini-css-extract-plugin)
-    - [optimize-css-assets-webpack-plugin](#optimize-css-assets-webpack-plugin)
-    - [webpack ProvidePlugin](#webpack-ProvidePlugin)
-    - [add-asset-html-webpack-plugin](#add-asset-html-webpack-plugin)
-- [基本使用](#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8)
-    - [Development和Production模式区分打包](#Development%E5%92%8CProduction%E6%A8%A1%E5%BC%8F%E5%8C%BA%E5%88%86%E6%89%93%E5%8C%85)
-    - [Code Splitting-JS代码分割](#Code-Splitting-JS%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2)
-    - [Code Splitting-CSS代码分割](#Code-Splitting-CSS%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2)
-    - [打包分析](#%E6%89%93%E5%8C%85%E5%88%86%E6%9E%90)
-    - [Preloading和Prefetching](#Preloading%E5%92%8CPrefetching)
-    - [Webpack与浏览器缓存](#Webpack%E4%B8%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98)
-    - [环境变量的配置](#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E9%85%8D%E7%BD%AE)
-- [实际应用](#%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8)
-    - [Library(库)的打包](#Library%E5%BA%93%E7%9A%84%E6%89%93%E5%8C%85)
-    - [PWA的打包配置](#PWA%E7%9A%84%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE)
-    - [TypeScript的打包配置](#TypeScript%E7%9A%84%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE)
-    - [DevServer：实现请求转发、单页面路由](#DevServer%E5%AE%9E%E7%8E%B0%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E5%8D%95%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1)
-    - [在Webpack中Eslint的配置](#%E5%9C%A8Webpack%E4%B8%ADEslint%E7%9A%84%E9%85%8D%E7%BD%AE)
-    - [多页面打包配置](#%E5%A4%9A%E9%A1%B5%E9%9D%A2%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE)
-    - [性能优化-提升打包速度](#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%8F%90%E5%8D%87%E6%89%93%E5%8C%85%E9%80%9F%E5%BA%A6)
-- [自定义实现](#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%9E%E7%8E%B0)
-    - [编写Loader](#%E7%BC%96%E5%86%99Loader)
-    - [编写Plugin](#%E7%BC%96%E5%86%99Plugin)
-</div>
-<!-- /TOC -->
-
 
