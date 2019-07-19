@@ -72,7 +72,7 @@
     margin-top: 10px;
     transition: 0.3s;
     &:hover {
-        background: rgba(36, 193, 246, 0.9);
+        background: #aaa;
     }
     .icon-font {
         font-size: 22px;
@@ -88,15 +88,12 @@
     .tooltip-east .tooltip-content {
         min-height: 100px;
         text-align: left;
-        padding: 5px 0 5px 20px;
-        right: 4.7em;
-        min-width: 200px;
+        padding: 5px 5px 5px 20px;
+        right: 2em;
+        min-width: 100px;
         width: initial;
         font-size: 14px;
-        text-shadow: 1px 1px 1px #398199;
         bottom: -10px;
-        transform-origin: 100% 100%;
-        transform: translate3d(0, -10px, 0) rotate3d(1, 1, 1, -30deg);
         a {
             color: #fff;
         }
@@ -115,9 +112,5 @@
         .toc-article li {
             white-space: nowrap;
         }
-    }
-    .tooltip:hover .tooltip-content {
-        bottom: -10px;
-        transform: translate(0);
     }
 }
