@@ -77,15 +77,20 @@ theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:yshAnswer/yshAnswer.github.io.git
-  branch: master
-
 # deploy:
 #   type: git
-#   repo: git@47.99.195.81:/var/repo/blog.git
+#   repo: git@github.com:yshAnswer/yshAnswer.github.io.git
 #   branch: master
+
+deploy:
+- type: git
+  repo:
+    git@github.com:yshAnswer/yshAnswer.github.io.git
+  branch: master
+- type: git
+  repo:
+    git@47.99.195.81:/var/repo/blog.git
+  branch: master
 
 # 标签搜索
 jsonContent:
