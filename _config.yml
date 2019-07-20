@@ -98,6 +98,11 @@ sitemap:
 baidusitemap:
   path: baidusitemap.xml
 
+nofollow:
+  enable: true
+  exclude:
+  - https://yshanswer.github.io/
+
 # 标签搜索
 jsonContent:
   meta: false
