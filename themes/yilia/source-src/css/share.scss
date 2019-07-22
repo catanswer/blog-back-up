@@ -4,6 +4,16 @@
 .share-btn {
     float: right;
     position: relative;
+    .tooltip-content {
+        right: 1rem !important;
+        bottom: -10px !important;
+    }
+    .tooltip:hover {
+        .tooltip-content {
+            right: 2rem !important;
+            opacity: 0.8 !important;
+        }
+    }
 }
 .share-icons {
     display: flex;
@@ -30,14 +40,17 @@
         &:active {
             color: #fff;
         }
-        &:hover {
-            transform: scale(1.2);
-        }
+        // &:hover {
+        //     transform: scale(1.2);
+        // }
         &.share-outer {
             border: none;
             color: #fff;
-            background: #4d4d4d;
+            background: #ccc;
             text-shadow: none;
+        }
+        &.share-sns {
+            margin: 8px 6px;
         }
     }
 }
